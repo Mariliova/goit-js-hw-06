@@ -10,6 +10,9 @@ function getRandomHexColor() {
 controlsEl.addEventListener('click', onBtnClick);
 
 function onBtnClick(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
   const amount = Number(event.currentTarget.firstElementChild.value);
   if (event.target === btnCreateEl) {
     createBoxes(amount);

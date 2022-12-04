@@ -8,6 +8,9 @@ let counterValue = 0;
 counterEl.addEventListener('click', onChangeValue);
 
 function onChangeValue(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
   if (event.target === decrement) {
     counterValue -= 1;
   }
