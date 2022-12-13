@@ -13,28 +13,28 @@ function onBtnClick(event) {
   if (event.target.nodeName !== 'BUTTON') {
     return;
   }
+
   const amount = Number(event.currentTarget.firstElementChild.value);
+
   if (event.target === btnCreateEl) {
     createBoxes(amount);
   }
+
   if (event.target === btnDestroyEl) {
     destroyBoxes();
   }
 }
 
 function createBoxes(amount) {
-  boxesConrainerEl.innerHTML = '';
   const boxesArray = [];
-  let boxeSize = 30;
+  let boxSize = 30;
   for (let i = 0; i < amount; i += 1) {
-    boxeSize += 10;
+    boxSize += 10;
     boxesArray.push(
-      `<div style="background-color:${getRandomHexColor()};width:${boxeSize}px;height:${boxeSize}px;"></div>`
+      `<div style="background-color:${getRandomHexColor()};width:${boxSize}px;height:${boxSize}px;"></div>`
     );
   }
-  console.log(boxesArray);
-  const boxesArrayToInsert = boxesArray.join('');
-  boxesConrainerEl.insertAdjacentHTML('beforeend', `${boxesArrayToInsert}`);
+  boxesConrainerEl.innerHTML = boxesArray.join('');
 }
 
 function destroyBoxes() {

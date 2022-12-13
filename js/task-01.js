@@ -8,5 +8,5 @@ console.log(`Number of categories: ${numberOfCategories}`);
 itemsCollection.forEach(itemEl => {
   const categoryTitleText = itemEl.querySelector('h2').textContent;
   const numberOfLiElements = itemEl.querySelectorAll('li').length;
-  return console.log(`Category: ${categoryTitleText} Elements: ${numberOfLiElements}`);
+  console.log(`Category: ${categoryTitleText} Elements: ${numberOfLiElements}`);
 });
